@@ -1,0 +1,54 @@
+﻿@model WebApplication2.Models.Post
+
+@{ ViewData["Title"] = "Create"; }
+<head>
+    <title>Identity by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+
+        <section id="main">
+            <h1 class="fas fa-cat"></h1>
+            <h2>Make a post!</h2>
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="fields">
+                    <div class="field">
+                        <div class="form-group">
+                            <input asp-for="Title" class="form-control" placeholder="Title" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="form-group">
+                            <input asp-for="Description" class="form-control" placeholder="Description" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="form-group">
+                            <input asp-for="Picture" class="bs-tooltip-right" />
+                            <span asp-validation-for="Picture"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions special">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+            <hr />
+        </section>
+    </div>
+
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+</body>
+
